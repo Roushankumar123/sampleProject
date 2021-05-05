@@ -1,0 +1,68 @@
+<div class="container h-100">
+    <div class="h-100 d-flex justify-content-center align-items-center">
+      <div class="card mx-auto w-50">
+        <div class="card-header">
+          <h4 class="card-title">MovieBlog</h4>
+        </div>
+  
+        <div class="card-body">
+          <form [formGroup]="loginFormValidate" novalidate>
+            <div class="form-group">
+              <label>User Name</label>
+              <input class="form-control" formControlName="uname" type="text" />
+              <div
+                *ngIf="
+                  loginFormValidate.controls['uname'].invalid &&
+                  (loginFormValidate.controls['uname'].dirty ||
+                    loginFormValidate.controls['uname'].touched)
+                "
+                class="text-danger"
+              >
+                <div *ngIf="loginFormValidate.controls['uname'].errors.required">
+                  Please enter username.
+                </div>
+              </div>
+            </div>
+  
+            <div class="form-group">
+              <label>Password</label>
+              <input
+                class="form-control"
+                formControlName="password"
+                type="password"
+              />
+              <div
+                *ngIf="
+                  loginFormValidate.controls['password'].invalid &&
+                  (loginFormValidate.controls['password'].dirty ||
+                    loginFormValidate.controls['password'].touched)
+                "
+                class="text-danger"
+              >
+                <div
+                  *ngIf="loginFormValidate.controls['password'].errors.required"
+                >
+                  Please enter password.
+                </div>
+              </div>
+            </div>
+  
+            <div class="form-group mb-0 text-right">
+              <button
+                routerLink="dashboard"
+                type="submit"
+                [disabled]="
+                  loginFormValidate.pristine || loginFormValidate.invalid
+                "
+                class="btn btn-success text"
+              >
+                Login
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <router-outlet></router-outlet>

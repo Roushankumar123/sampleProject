@@ -1,0 +1,28 @@
+<div class="container-fluid">
+    <div class="row justify-content-center">
+      <div
+        class="col-3 card m-3 p-0 cursor-pointer"
+        *ngFor="let movie of movies"
+        [routerLink]="['/movie-details/', movie.id]"
+      >
+        <div class="card-header">
+          <h3 class="card-title">{{ movie.title }}</h3>
+        </div>
+  
+        <div class="card-body">
+          <img src="{{ movie.poster }}" class="img-fluid img-object" alt="" />
+        </div>
+  
+        <div class="card-footer">
+          <p>{{ movie.overview | slice: 0:130 }}...</p>
+          <p>
+            {{ movie.release_date }}
+          </p>
+          <p>
+            {{ movie.genres }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-top-bar></app-top-bar>

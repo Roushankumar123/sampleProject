@@ -1,0 +1,76 @@
+<app-bar></app-bar>
+
+<div class="container">
+  <div class="row">
+    <div class="col-12 py-4">
+      <div class="row">
+        <div class="col-6">
+          <div class="card form-group">
+            <div class="card-body">
+              <canvas
+                baseChart
+                [datasets]="barChartData"
+                [labels]="barChartLabels"
+                [options]="barChartOptions"
+                [plugins]="barChartPlugins"
+                [legend]="barChartLegend"
+                [chartType]="barChartType"
+              >
+              </canvas>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6">
+          <div class="card form-group">
+            <div class="card-body">
+              <canvas
+                baseChart
+                [data]="doughnutChartData"
+                [labels]="doughnutChartLabels"
+                [chartType]="doughnutChartType"
+              >
+              </canvas>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6">
+          <div class="card form-group">
+            <div class="card-body">
+              <canvas
+                baseChart
+                [data]="pieChartData"
+                [labels]="pieChartLabels"
+                [chartType]="pieChartType"
+                [options]="pieChartOptions"
+                [plugins]="pieChartPlugins"
+                [legend]="pieChartLegend"
+              >
+              </canvas>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6">
+          <div class="card form-group">
+            <div class="card-body">
+              <canvas
+                baseChart
+                [datasets]="lineChartData"
+                [labels]="lineChartLabels"
+                [options]="lineChartOptions"
+                [legend]="lineChartLegend"
+                [chartType]="lineChartType"
+                [plugins]="lineChartPlugins"
+              >
+              </canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <router-outlet></router-outlet>
+</div>

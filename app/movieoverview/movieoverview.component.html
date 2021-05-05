@@ -1,0 +1,29 @@
+<app-bar></app-bar>
+
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="card my-3">
+        <div class="card-body">
+          <div class="row align-items-center">
+            <div class="col-3">
+              <img
+                src="{{ movieElement.poster }}"
+                class="img-fluid img-object"
+                alt=""
+              />
+            </div>
+
+            <div class="col-9">
+              <p>
+                {{ movieElement.overview }}
+              </p>
+
+              <button class="btn btn-outline-primary" (click)="addToCart()">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
